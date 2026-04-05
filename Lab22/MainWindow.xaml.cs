@@ -29,6 +29,7 @@ namespace Lab22
             sizeComboBox.ItemsSource = new List<Double> { 8, 9, 10, 11, 12, 14, 16, 18, 20, 22, 24, 26, 28, 36, 48, 72 };
         }
 
+        // Відкриття файлу. Створюється нова вкладка TabControl з іменем файлу. У текстове поле виводиться зміст файлу.
         private void Open_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             OpenFileDialog dlg = new OpenFileDialog();
@@ -59,6 +60,7 @@ namespace Lab22
             }
         }
 
+        // Отримується поточна вкладка, дані з її текстового поля зберігається у файл.
         public void Save_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -80,6 +82,8 @@ namespace Lab22
             }
 
         }
+
+        // При зміні шрифту отримується поточна вкладка, змінюється шрифт для виділеного тексту у її текстовому полі.
         private void fontComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (fontComboBox.SelectedItem != null)
@@ -95,6 +99,7 @@ namespace Lab22
             }
         }
 
+        // При зміні кеглю отримується поточна вкладка, змінюється кегль для виділеного тексту у її текстовому полі.
         private void sizeComboBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             TabItem currentTab = fileTabControl.SelectedItem as TabItem;
